@@ -6,4 +6,10 @@ npm install
   node app.js
 <h4>Opcionálisan megadható port</h4>
 node app.js --port=1337
+
+<h7>TODO:</h7>
+<ul>
+<li>Admin/edit menüben file feltöltés</li>
+</ul>
+
 </html>
