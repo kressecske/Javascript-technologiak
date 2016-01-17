@@ -1,0 +1,26 @@
+<% include layout_header %>
+Témák:
+	<ul>
+	<% for(i=0;i<tema.length;i++){ %>
+		<li>
+				ID:<%= i %><br>
+				Név:<%= tema[i].name %><br>
+				Háttér:<%= tema[i].bg %><br>
+				Betűszín:<%= tema[i].color %><br>
+				Fejléc színe:<%= tema[i].header %><br>
+				Fejléc áttűnési színe:<%= tema[i].headerhov %><br>
+				Player(kép URL):<%= tema[i].player %><br>
+				Robot(kép URL): <%= tema[i].bot %><br>			
+				Cella szegély színe: <%= tema[i].cella %>
+				<br>			
+		<a href="/edit/<%= i %>">Szerkeszt</a>
+		<% if( tema.length != 1 ){ %>
+			<a href="/delete/<%= i %>" onclick="return confirm('Biztosan kívánni törli a kiválasztott témát?');">Töröl</a>
+		<% } %>
+		</li>
+
+	<% } %>
+
+	</ul>
+	<a href="/edit/<%= tema.length %>" > Új téma </a>
+<% include layout_footer %>

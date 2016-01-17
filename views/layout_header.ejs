@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="font-awesome-4.3.0\css\font-awesome.min.css">
+    <script type="text/javascript" src="js/jsbead.js"></script>
+    <script type="text/javascript" src="js/ajax.js"></script>
+
+
+    <style>
+    body {
+      background-color: <%= bg %>;
+      color: <%= color %>;
+    }
+    .menu {
+      background-color: <%= header %>;
+    }
+    .menu ul li:hover{
+      background-color: <%= headerhov %>;
+    }
+    .j{
+      background-size: 50px 50px;
+      background-image: url(uploads/player.png);
+    }
+
+    .robot{
+      background-size: 50px 50px;
+      background-image: url(uploads/bot.png);
+    }
+
+    .bumm{
+      background-size: 50px 50px;
+      background-image: url(uploads/bumm.png);
+    }
+    .gameTable td{
+      border: 1px solid <%= cella %>;
+    }
+    </style>
+  </head>
+  <body>
+    <header class="menu">
+      <ul>
+      <% for(var i=0; i<menu.length;i++) { %>
+        <li>
+        <a href="/setcookie/<%= i %>"><%= menu[i] %></a>
+      <% } %>
+      <% if(!isLoggedIn){ %>
+        <li>
+          <a href="/auth/login">
+            Belépés
+          </a>
+        </li>
+        <li>
+          <a href="/auth/signup">
+            Regisztráció
+          </a>          
+        </li>
+      <% } %>
+      <% if(isLoggedIn){ %>
+        <li>
+          <div> Welcome: <%= user %> </div>
+        </li>
+        <li>
+          <div><a href="/auth/logout">Log Out</a></div>
+        </li>
+      <% } %>
+      <% if(admin){ %>
+        <li>
+          <a href="/admin">adminmenu</a>
+        </li>
+      <% } %>      
+
+      </ul>
+    </header>
+    <div class ="content">

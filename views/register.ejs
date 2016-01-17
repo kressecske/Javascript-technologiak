@@ -1,0 +1,30 @@
+<% include layout_header %>
+
+<% if (message.length > 0) { %>
+    <div class="alert alert-danger"><%= message %></div>
+<% } %>
+
+<form method="post">
+    <div>
+        <label>Email:</label>
+        <input id="email" type="text" name="email"/>
+    </div>
+    <div>
+        <label>Name:</label>
+        <input id="name" type="text" name="name"/>
+    </div>
+    <div>
+        <label>Password:</label>
+        <input id="pw" type="password" name="password"/>
+    </div>
+    <div>
+        <input type="submit" value="Register" />
+    </div>
+</form>
+
+<a href="login"> Log In </a> </div>
+
+    </body>
+</html>
+
+<% include layout_footer %>

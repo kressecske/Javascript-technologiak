@@ -1,0 +1,47 @@
+<% include layout_header %>
+
+<%
+	if(id == tema.length ){
+		name = "";
+		bg = "";
+		color = "";
+		header = "";
+		headerhov = "";
+		player = "";
+		bot = "";
+		cella= "";
+	}else{
+		name = tema[id].name;
+		bg =  tema[id].bg;
+		color = tema[id].color;
+		header = tema[id].header;
+		headerhov = tema[id].headerhov;
+		player = tema[id].player;
+		bot = tema[id].bot;	
+		cella = tema[id].cella;	
+	}
+%>
+<% if(hiba.length > 0) { %>
+	<ul>
+	<% for(var i=0;i<hiba.length;i++){ %>
+		<li><%= hiba[i] %></li>
+	<% } %>
+	</ul>
+<% } %>
+
+<form method="post" <!--enctype="multipart/form-data"-->>
+ ID:<input type="text" name="id" value="<%= id %>" readonly><br>
+ Név:<input type="text" name="name" value="<%= name %>"  ><br>
+ Háttér:<input type="text" name="bg" value="<%= bg %>" ><br>
+ Szöveg színe:<input type="text" name="color" value="<%= color %>" ><br>
+ Fejléc színe:<input type="text" name="header" value="<%= header %>"><br>
+ Fejléc áttűnési színe:<input type="text" name="headerhov" value="<%= headerhov %>"><br>
+ Játékos(TODO) (kép URL):uploads/player.png
+ <input type="file" name="player" id="player" disabled><br>
+ Robot(TODO) (kép URL):uploads/bot.png
+ <input type="file" name="bot" id="bot" disabled><br>
+ Cella szegély színe:<input type="text" name="cella" value="<%= cella %>"><br> 
+ <input type="submit" name="submit" value="Mentés" onclick="return confirm('Biztos, hogy elmented a változtatásokat?');">
+</form>
+<a href="/admin"> Vissza </a>
+<% include layout_footer %>

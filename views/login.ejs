@@ -1,0 +1,22 @@
+<% include layout_header %>
+
+<% if (message.length > 0) { %>
+    <div class="alert alert-danger"><%= message %></div>
+<% } %>
+
+<form method="post">
+    <div>
+        <label>Email:</label>
+        <input type="text" name="email"/>
+    </div>
+    <div>
+        <label>Password:</label>
+        <input type="password" name="password"/>
+    </div>
+    <div>
+        <input type="submit" value="Log In"/>
+    </div>
+</form>
+
+<a href="signup"> Regisztráció</a> </div>
+<% include layout_footer %>
