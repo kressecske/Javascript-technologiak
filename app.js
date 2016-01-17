@@ -145,7 +145,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(flash());
 
 app.use(session({
-    cookie: { maxAge: 60000 },
+    cookie: { maxAge: 3600000 },//One hour
     secret: 'titkos szoveg',
     resave: false,
     saveUninitialized: false,

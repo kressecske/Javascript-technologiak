@@ -287,12 +287,12 @@ function compare(a,b) {
 }
 
 router.get('/rekordment/:getadat',function(req,res,next){
-  if(req.user != null){;
+  if(req.user != null){
     var pont = req.params.getadat;
     var username = req.user.username;
     var date =new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');
     var str = date + "    " + pont + " pont.";
-  }
+  
   rekordokdb.findOne({ name: username }, function (err, doc) {
       if(doc != null){
         if(doc.records.length < 10){
@@ -324,7 +324,7 @@ router.get('/rekordment/:getadat',function(req,res,next){
       }
       res.send(doc);
   });
-
+  }
 });
 
 
