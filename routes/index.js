@@ -254,6 +254,7 @@ router.post('/edit/:id', function(req,res,next){
     if(new_cella.length == 0){
       hibak.push('Nincs megadva a cella szegély színe!');
     }
+    //TODO FILE UPLOAD
     if(hibak.length == 0){
       var old_name;
       db.find({}, function (err, docs) {
